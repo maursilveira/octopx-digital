@@ -1,0 +1,524 @@
+@charset "UTF-8";
+
+.hidden {
+  display: none;
+}
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+body {
+  font-family: 'Sanchez', serif;
+  color: #000000;
+}
+
+#container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.textBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  vertical-align: middle;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.title {
+  font-family: 'Inconsolata', monospace;
+}
+
+#mainHeader {
+  position: fixed;
+  height: 3.625rem;
+  z-index: 10;
+  width: inherit;
+  background-color: rgba(63, 26, 64, 0.95);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#mainHeader #mainLogo img{
+  width: 120px;
+  padding: 10px 0;
+}
+
+#mainHeader #navigation {
+  margin-top: 0.9em;
+  padding: 0 0.6em 0 0;
+}
+
+#mainHeader #navigation #hamburgerMenu button {
+  width: 26px;
+  height: 20px;
+  outline: 0;
+}
+#mainHeader #navigation #hamburgerMenu button::after {
+  height: 0;
+  width: 24px;
+  -webkit-box-shadow: 0 2px 0 2px #ffffff, 0 10px 0 2px #ffffff, 0 18px 0 2px #ffffff;
+	-moz-box-shadow: 0 2px 0 2px #ffffff, 0 10px 0 2px #ffffff, 0 18px 0 2px #ffffff;
+	-ms-box-shadow: 0 2px 0 2px #ffffff, 0 10px 0 2px #ffffff, 0 18px 0 2px #ffffff;
+  box-shadow: 0 2px 0 2px #ffffff, 0 10px 0 2px #ffffff, 0 18px 0 2px #ffffff;
+}
+#mainHeader #navigation #mainNav {
+  position: absolute;
+  top: 3.625rem;
+  right: 0.4rem;
+  opacity: 0;
+}
+#mainHeader #navigation #mainNav ul {
+  list-style: none;
+}
+#mainHeader #navigation #mainNav ul li a{
+  display: block;
+  text-align: right;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  outline: 0;
+}
+#mainHeader #navigation #mainNav ul li:last-child a {
+  border-style: none;
+}
+#mainBanner {
+  position: relative;
+}
+#mainBanner #heroText {
+  padding: 1.8rem 1.8rem;
+  color: #ffffff;
+  background-color: rgba(63, 26, 64, 0.75);
+}
+#mainBanner #heroText p {
+  font-size: 1.4rem;
+  line-height: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+#textArea {
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#textArea #tentacle {
+  position: absolute;
+  width: 65%;
+  opacity: 0.2;
+  top: 175%;
+  left: 70%;
+  -webkit-transform: translate(-50%, -30%) rotate(110deg);
+  -o-transform: translate(-50%, -30%) rotate(110deg);
+  -ms-transform: translate(-50%, -30%) rotate(110deg);
+  transform: translate(-50%, -30%) rotate(110deg);
+}
+
+#textArea div {
+  padding: 0.9rem 0;
+}
+#textArea div #mainText {
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin-top: 1rem;
+}
+#textArea div #subText {
+  font-size: 0.7rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#services{
+  background-color: #dedede;
+  text-align: center;
+}
+#services #servTitle,
+#team #teamTitle,
+#contact #contactTitle {
+  font-size: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 0.8rem;
+}
+#services p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  padding-bottom: 3rem;
+}
+#services h3 {
+  font-size: 1.5rem;
+}
+#services div {
+  background-color: inherit;
+}
+#services div img {
+  margin-bottom: 10px;
+}
+
+#projects {
+  align-items: center;
+}
+
+.grid-item {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(63, 26, 64, 1);
+}
+/*hide last grid-items when screen size smaller than 400px (show only 6 first ones)*/
+.grid-item:nth-of-type(1n+7) {
+  display: none;
+}
+.grid-item a img {
+  transition: all 1s;
+}
+.grid-item:hover a img {
+  transform: scale(1.2);
+  opacity: 0.4;
+}
+.grid-item .projectName {
+  position: absolute;
+  font-family: 'Inconsolata', monospace;
+  font-size: 2rem;
+  color: #ffffff;
+  top: 25%;
+  left: -400px;
+  transition: all 0.8s;
+}
+.grid-item:hover .projectName {
+  left: 20px;
+}
+
+#team {
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  background-color: #dedede;
+  position: relative;
+  overflow: hidden;
+}
+#team #memberRow {
+  width: inherit;
+  position: relative;
+}
+#team #memberRow .member {
+  padding-top: 1.8rem;
+}
+#team #memberRow .member .memberName {
+  font-size: 1.6rem;
+}
+#team #memberRow .member img {
+  margin-bottom: 1rem;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.4s ease-in;
+}
+#team #memberRow .member img:hover {
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+#team .memberDesc,
+#team .readMore {
+  text-align: left;
+}
+#team .readMore {
+  display: block;
+  outline: 0;
+  text-decoration: underline;
+  padding-bottom: 1.4rem;
+}
+#team .goBack {
+  outline: 0;
+  text-decoration: underline;
+}
+#team .profile {
+  width: inherit;
+  position: absolute;
+  top: 250px;
+  left: 1600px;
+  display: block;
+}
+#team .profile .profileName {
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+#team .profile .profilePosition {
+  margin-bottom: 1.6rem;
+}
+#contact {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.contactWrapper {
+  padding: 0;
+}
+.contactWrapper #contactForm {
+  width: 100%;
+  max-width: 24rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.contactWrapper #contactForm .contactInfo {
+	height: 2.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+	border: 2px solid #000000;
+	border-radius: 3px;
+  margin-bottom: 1.25rem;
+	padding-left: 0.75rem;
+	outline: 0;
+}
+.contactWrapper #contactForm .contactInfo:active {
+	border: 2px solid #8e3b90;
+}
+.contactWrapper #contactForm #contactMessage {
+  height: 9rem;
+	font-family: inherit;
+  font-size: 1rem;
+	padding: 0.5rem 0 0 0.75rem;
+}
+.contactWrapper #submitWrapper {
+  text-align: center;
+	height: 2.5rem;
+}
+.contactWrapper #submitWrapper #submitButton {
+  display: inline-block;
+  height: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  background-color: #3f1a40;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 0.25rem 1.25rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+}
+.contactWrapper #submitWrapper #submitButton span {
+	font-size: 1.25rem;
+	color: #ffffff;
+  transition: all 0.8s;
+}
+.contactWrapper #submitWrapper #submitButton:hover{
+	background-color: rgba(63, 26, 64, 0.8);
+}
+.contactWrapper #googleMap {
+  width: 100%;
+  max-width: 24rem;
+  height: 20.25rem;
+  border: 2px solid #000000;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #dedede;
+  color: #000000;
+}
+
+footer section {
+  padding: 30px 0;
+}
+footer section h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+footer #contactInfo #contactContainer{
+  width: 12.5rem;
+}
+footer #contactInfo #contactContainer img {
+  display: inline-block;
+}
+footer #contactInfo #contactContainer p {
+  display: inline-block;
+}
+footer #social {
+  text-align: center;
+}
+footer #copyright {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  background-color: rgba(63, 26, 64, 1);
+  color: #ffffff;
+  text-align: center;
+  padding-bottom: 0;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 25em) { /*400px*/
+  #mainBanner #heroText p {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .grid-item {
+    width: 50%;
+  }
+  /*shows all grid-items when screen size is equal or bigger than 400px (show all)*/
+  .grid-item:nth-of-type(1n+7) {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 40em) { /*640px*/
+  #mainHeader {
+    height: 5.625rem;
+  }
+  #mainHeader #mainLogo img{
+    width: 160px;
+    padding: 20px 0;
+  }
+
+  #mainHeader #navigation {
+    margin-top: 2em;
+    padding: 0 1em 0 0;
+  }
+  #mainHeader #navigation #hamburgerMenu button {
+    width: 32px;
+  }
+  #mainHeader #navigation #hamburgerMenu button::after {
+    width: 30px;
+  }
+  #mainHeader #navigation #mainNav {
+    left: 0;
+    width: 100%;
+  }
+  #mainHeader #navigation #mainNav ul li {
+    display: inline-block;
+  }
+  #mainHeader #navigation #mainNav ul li a{
+    text-align: center;
+    border-bottom: 0;
+    border-right: 1px solid #ffffff;
+    margin-top: 2rem;
+    padding: 0 1.4rem;
+    line-height: 1.4rem;
+  }
+  #mainHeader #navigation #mainNav ul li:last-child a {
+    border-style: none;
+  }
+  #mainBanner #heroText p {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+  #textArea #tentacle {
+    width: 58%;
+  }
+  #textArea div {
+    padding: 1.4rem 0;
+  }
+  #textArea div #mainText {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin-top: 1.2rem;
+  }
+  #textArea div #subText {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  .contactWrapper {
+    width: 50%;
+    padding: 1.5rem;
+  }
+  .contactWrapper:first-of-type {
+    border-right: 2px solid #dedede;
+  }
+
+  footer #about,
+  footer #contactInfo,
+  footer #social,
+  #team .member,
+  #contact section {
+    margin-left: 0;
+    margin-right: 0;
+    float: left;
+  }
+
+}
+
+@media screen and (min-width: 50em) { /*800px*/
+  .grid-item {
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 64em) { /*1024px*/
+  #mainBanner #heroText p {
+    font-size: 3.75rem;
+    line-height: 3.75rem;
+  }
+  #textArea #tentacle {
+    width: 55%;
+    max-width: 40rem;
+  }
+  #textArea div {
+    padding: 2rem 0;
+  }
+  #textArea div #mainText {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    margin-top: 1.8rem;
+  }
+  #textArea div #subText {
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 75em) { /*1200px*/
+  .grid-item {
+    width: 25%;
+  }
+  #textArea #tentacle {
+    width: 52%;
+  }
+  #textArea div {
+    padding: 2.4rem 0;
+  }
+  #textArea div #mainText {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+  }
+  #textArea div #subText {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 100em) { /*1600px*/
+  #container {
+    width: 1600px;
+  }
+  #textArea div #mainText {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  #textArea div #subText {
+    font-size: 0.8rem;
+    margin-top: 3em;
+  }
+}
